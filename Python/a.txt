@@ -1,0 +1,3 @@
+Hi I am Gopan
+This is File Handling in C.
+Soon I will be implementing it in Python.

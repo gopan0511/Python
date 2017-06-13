@@ -1,0 +1,64 @@
+from time import sleep
+
+class Node:
+	#Constructor
+	def __init__(self):
+		self.data = None
+		self.next = None
+
+	def setData(self,data):
+		self.data = data
+
+	def getData(self):
+		return self.data
+
+	def setNext(self,next):
+		self.next = next
+
+	def getNext(self):
+		return self.next
+	
+	def hasNext(self):
+		return self.next != None
+
+class Stack(object):
+	base = None
+	def __init__(self,datalist = None):
+		self.head = None
+		if datalist:
+			for data in datalist:
+				print 'pushing ', data
+				sleep(1)
+				self.push(data)
+
+	def push(self,data):
+		global base
+		temp = Node()
+		base = temp
+		temp.setData(data)
+		temp.setNext(self.head)
+		self.head = temp
+
+	def pop(self):
+		if self.head is None:
+			raise IndexError
+		temp = self.head.getData()
+		self.head = self.head.getNext()
+		return temp
+
+	def peek(self):
+		if self.head is None:
+			raise IndexError
+		return self.head.getData()
+
+	def printStack(self):
+		global base		
+		while base != 0:
+			print base.data
+			base = base.next
+		
+
+my_list = ["first","second","third","fourth","fifth"]
+stack = Stack(my_list)
+stack.printStack()
+	

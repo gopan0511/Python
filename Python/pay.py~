@@ -1,0 +1,3 @@
+time = input("Enter time: ")
+if time >= 8 and time <= 16:
+	
